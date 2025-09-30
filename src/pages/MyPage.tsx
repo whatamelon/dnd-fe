@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { useAuth } from '@/hooks/useAuth'
+import { useNavigate } from 'react-router-dom'
 import {
   User,
   Settings,
@@ -19,6 +21,19 @@ import {
 export default function MyPage() {
   const [activeTab, setActiveTab] = useState('profile')
   const [searchTerm, setSearchTerm] = useState('')
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout(
+      {},
+      {
+        onSuccess: () => {
+          navigate('/login')
+        },
+      }
+    )
+  }
 
   // 샘플 히스토리 데이터
   const historyData = [
@@ -126,7 +141,7 @@ export default function MyPage() {
                     <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                       <User className="w-12 h-12 text-white" />
                     </div>
-                    <CardTitle>사용자님</CardTitle>
+                    <CardTitle>{user?.name || '사용자님'}</CardTitle>
                     <CardDescription>프로 플랜 사용자</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -162,7 +177,7 @@ export default function MyPage() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           이메일
                         </label>
-                        <Input defaultValue="user@example.com" />
+                        <Input defaultValue={user?.email || 'user@example.com'} />
                       </div>
                     </div>
                     <div>
@@ -182,6 +197,9 @@ export default function MyPage() {
                     <div className="flex gap-4">
                       <Button>정보 저장</Button>
                       <Button variant="outline">비밀번호 변경</Button>
+                      <Button variant="destructive" onClick={handleLogout}>
+                        로그아웃
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>

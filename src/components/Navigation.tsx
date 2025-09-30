@@ -1,15 +1,16 @@
 import { Link, useLocation } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import LanguageSwitcher from './LanguageSwitcher'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function Navigation() {
   const location = useLocation()
+  const { user, isAuthenticated, logout } = useAuth()
 
   const navItems = [
-    { path: '/', label: '홈' },
     { path: '/about', label: '서비스 소개' },
     { path: '/pricing', label: '요금제' },
-    { path: '/mypage', label: '마이페이지' },
+    { path: '/samples', label: '미리보기' },
     { path: '/contact', label: '문의하기' },
   ]
 
@@ -40,10 +41,32 @@ export default function Navigation() {
 
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button variant="outline" size="sm">
-              로그인
-            </Button>
-            <Button size="sm">시작하기</Button>
+            {isAuthenticated ? (
+              <>
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">
+                      {user?.name?.charAt(0) || 'U'}
+                    </span>
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">
+                    {user?.name || '사용자'}
+                  </span>
+                </div>
+                <Button variant="outline" size="sm" onClick={() => logout()}>
+                  로그아웃
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="outline" size="sm">
+                    로그인
+                  </Button>
+                </Link>
+                <Button size="sm">시작하기</Button>
+              </>
+            )}
           </div>
         </div>
       </div>

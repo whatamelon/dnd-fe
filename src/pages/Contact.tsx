@@ -30,19 +30,11 @@ export default function Contact() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      이름 *
-                    </label>
-                    <Input id="name" placeholder="홍길동" required />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      이메일 *
-                    </label>
-                    <Input id="email" type="email" placeholder="example@email.com" required />
-                  </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    이메일 *
+                  </label>
+                  <Input id="email" type="email" placeholder="example@email.com" required />
                 </div>
 
                 <div>
@@ -67,13 +59,6 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    제목 *
-                  </label>
-                  <Input id="subject" placeholder="문의 제목을 입력하세요" required />
-                </div>
-
-                <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     메시지 *
                   </label>
@@ -87,9 +72,9 @@ export default function Contact() {
                 </div>
 
                 <Button
-                  className="w-full"
                   size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                  variant="default"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   메시지 보내기
@@ -165,7 +150,7 @@ export default function Contact() {
                 <CardContent className="space-y-3">
                   <div className="text-sm">
                     <div className="font-medium text-gray-900">Q. 생성 시간이 얼마나 걸리나요?</div>
-                    <div className="text-gray-600 mt-1">A. 일반적으로 2-5분 정도 소요됩니다.</div>
+                    <div className="text-gray-600 mt-1">A. 일반적으로 4-8초 정도 소요됩니다.</div>
                   </div>
                   <div className="text-sm">
                     <div className="font-medium text-gray-900">
