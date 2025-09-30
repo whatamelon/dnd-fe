@@ -131,7 +131,7 @@ export default function Home() {
         </FadeInUp>
 
         {/* Main Features */}
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Feature 1: Multiple Clothes */}
           <FadeInUp delay={0.3}>
             <Card className="p-8 hover:shadow-2xl transition-all duration-500 group border-0 bg-white/80 backdrop-blur-sm">
@@ -218,143 +218,153 @@ export default function Home() {
         </div>
 
         {/* Process Section */}
-        <ParallaxSection speed={0.3}>
-          <FadeInUp delay={0.5}>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                간단한 3단계로 완성
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                복잡한 과정 없이 몇 번의 클릭만으로 전문가 수준의 착용샷을 생성하세요
-              </p>
-            </div>
-          </FadeInUp>
+        <div className="pb-[800px]">
+          <ParallaxSection speed={0.3}>
+            <FadeInUp delay={0.5}>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  간단한 3단계로 완성
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  복잡한 과정 없이 몇 번의 클릭만으로 전문가 수준의 착용샷을 생성하세요
+                </p>
+              </div>
+            </FadeInUp>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
-            <FadeInUp delay={0.6}>
-              <div className="text-center group">
-                <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl font-bold text-white">1</span>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <FadeInUp delay={0.6}>
+                <div className="text-center group">
+                  <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl font-bold text-white">1</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">옷 사진 업로드</h3>
+                  <p className="text-gray-600">원하는 옷의 사진을 업로드하세요</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">옷 사진 업로드</h3>
-                <p className="text-gray-600">원하는 옷의 사진을 업로드하세요</p>
-              </div>
-            </FadeInUp>
-            <FadeInUp delay={0.7}>
-              <div className="text-center group">
-                <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl font-bold text-white">2</span>
+              </FadeInUp>
+              <FadeInUp delay={0.7}>
+                <div className="text-center group">
+                  <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl font-bold text-white">2</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">스타일 설정</h3>
+                  <p className="text-gray-600">분위기, 채도, 장소를 선택하세요</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">스타일 설정</h3>
-                <p className="text-gray-600">분위기, 채도, 장소를 선택하세요</p>
-              </div>
-            </FadeInUp>
-            <FadeInUp delay={0.8}>
-              <div className="text-center group">
-                <div className="w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl font-bold text-white">3</span>
+              </FadeInUp>
+              <FadeInUp delay={0.8}>
+                <div className="text-center group">
+                  <div className="w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl font-bold text-white">3</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">AI 생성 완료</h3>
+                  <p className="text-gray-600">몇 분 후 완성된 착용샷을 확인하세요</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">AI 생성 완료</h3>
-                <p className="text-gray-600">몇 분 후 완성된 착용샷을 확인하세요</p>
-              </div>
-            </FadeInUp>
-          </div>
-        </ParallaxSection>
+              </FadeInUp>
+            </div>
+          </ParallaxSection>
+        </div>
 
         {/* Additional Features */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
-          <FadeInUp delay={0.9}>
-            <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <History className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl font-bold">히스토리 관리</CardTitle>
-                <CardDescription className="text-gray-600">
-                  생성한 모든 착용샷을 체계적으로 관리하고 다시 확인할 수 있습니다
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </FadeInUp>
+        <div className="py-4">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <FadeInUp delay={0.9}>
+              <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <History className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-bold">히스토리 관리</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    생성한 모든 착용샷을 체계적으로 관리하고 다시 확인할 수 있습니다
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </FadeInUp>
 
-          <FadeInUp delay={1.0}>
-            <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <CreditCard className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl font-bold">다양한 요금제</CardTitle>
-                <CardDescription className="text-gray-600">
-                  개인용부터 기업용까지 다양한 플랜으로 서비스를 이용할 수 있습니다
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </FadeInUp>
+            <FadeInUp delay={1.0}>
+              <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <CreditCard className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-bold">다양한 요금제</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    개인용부터 기업용까지 다양한 플랜으로 서비스를 이용할 수 있습니다
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </FadeInUp>
 
-          <FadeInUp delay={1.1}>
-            <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <User className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl font-bold">마이페이지</CardTitle>
-                <CardDescription className="text-gray-600">
-                  개인 설정과 생성 이력을 한눈에 확인하고 관리할 수 있습니다
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </FadeInUp>
+            <FadeInUp delay={1.1}>
+              <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <User className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-bold">마이페이지</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    개인 설정과 생성 이력을 한눈에 확인하고 관리할 수 있습니다
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </FadeInUp>
+          </div>
         </div>
 
         {/* Features Grid */}
-        <FadeInUp delay={1.2}>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-20">
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
-              <Zap className="w-12 h-12 text-yellow-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="font-semibold mb-2">빠른 처리</h3>
-              <p className="text-sm text-gray-600">2-5분 내 완성</p>
+        <div className="py-20">
+          <FadeInUp delay={1.2}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <Card className="hover:shadow-xl text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
+                <Zap className="w-12 h-12 text-yellow-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-semibold mb-2">빠른 처리</h3>
+                <p className="text-sm text-gray-600">2-5분 내 완성</p>
+              </Card>
+              <Card className="hover:shadow-xl text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
+                <Star className="w-12 h-12 text-purple-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-semibold mb-2">고품질</h3>
+                <p className="text-sm text-gray-600">4K 해상도 지원</p>
+              </Card>
+              <Card className="hover:shadow-xl text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
+                <Globe className="w-12 h-12 text-blue-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-semibold mb-2">다양한 장소</h3>
+                <p className="text-sm text-gray-600">50+ 배경 선택</p>
+              </Card>
+              <Card className="hover:shadow-xl  text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
+                <Shield className="w-12 h-12 text-green-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-semibold mb-2">안전한 서비스</h3>
+                <p className="text-sm text-gray-600">개인정보 보호</p>
+              </Card>
             </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
-              <Star className="w-12 h-12 text-purple-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="font-semibold mb-2">고품질</h3>
-              <p className="text-sm text-gray-600">4K 해상도 지원</p>
-            </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
-              <Globe className="w-12 h-12 text-blue-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="font-semibold mb-2">다양한 장소</h3>
-              <p className="text-sm text-gray-600">50+ 배경 선택</p>
-            </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
-              <Shield className="w-12 h-12 text-green-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="font-semibold mb-2">안전한 서비스</h3>
-              <p className="text-sm text-gray-600">개인정보 보호</p>
-            </div>
-          </div>
-        </FadeInUp>
+          </FadeInUp>
+        </div>
 
         {/* CTA Section */}
-        <FadeInUp delay={1.3}>
-          <div className="text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white">
-            <h2 className="text-4xl font-bold mb-4">지금 바로 시작해보세요</h2>
-            <p className="text-xl mb-8 opacity-90">무료로 체험하고 AI의 놀라운 결과를 확인하세요</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-              >
-                무료로 시작하기
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
-              >
-                요금제 보기
-              </Button>
+        <div className="py-20">
+          <FadeInUp delay={1.3}>
+            <div className="text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white">
+              <h2 className="text-4xl font-bold mb-4">지금 바로 시작해보세요</h2>
+              <p className="text-xl mb-8 opacity-90">
+                무료로 체험하고 AI의 놀라운 결과를 확인하세요
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
+                >
+                  무료로 시작하기
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-black hover:bg-white/10 px-8 py-4 text-lg font-semibold"
+                >
+                  요금제 보기
+                </Button>
+              </div>
             </div>
-          </div>
-        </FadeInUp>
+          </FadeInUp>
+        </div>
       </div>
 
       <style>{`

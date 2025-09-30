@@ -1,8 +1,7 @@
-import { ReactNode } from 'react'
 import { useParallax } from '@/hooks/useScrollAnimation'
 
 interface ParallaxSectionProps {
-  children: ReactNode
+  children: React.ReactNode
   speed?: number
   className?: string
 }
@@ -16,13 +15,13 @@ export default function ParallaxSection({
 
   return (
     <div
-      className={className}
+      className={`relative ${className}`}
       style={{
         transform: `translateY(${offset * speed}px)`,
+        willChange: 'transform',
       }}
     >
       {children}
     </div>
   )
 }
-
