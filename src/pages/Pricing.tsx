@@ -27,7 +27,7 @@ export default function Pricing() {
       price: '29,000',
       period: '월',
       description: '개인 크리에이터를 위한 인기 플랜',
-      icon: <Star className="w-8 h-8 text-purple-500" />,
+      icon: <Star className="w-8 h-8 text-blue-500" />,
       features: [
         '월 100회 착용샷 생성',
         '다중/단일 옷 착용샷 모두 가능',
@@ -47,7 +47,7 @@ export default function Pricing() {
       price: '99,000',
       period: '월',
       description: '기업 및 브랜드를 위한 플랜',
-      icon: <Crown className="w-8 h-8 text-yellow-500" />,
+      icon: <Crown className="w-8 h-8 text-yellow-600" />,
       features: [
         '무제한 착용샷 생성',
         '다중/단일 옷 착용샷 모두 가능',
@@ -70,7 +70,7 @@ export default function Pricing() {
       price: '문의',
       period: '',
       description: '대기업을 위한 맞춤형 솔루션',
-      icon: <Building2 className="w-8 h-8 text-indigo-500" />,
+      icon: <Building2 className="w-8 h-8 text-blue-600" />,
       features: [
         '무제한 착용샷 생성',
         '다중/단일 옷 착용샷 모두 가능',
@@ -96,7 +96,7 @@ export default function Pricing() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-blue-100">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">요금제 선택</h1>
@@ -113,13 +113,13 @@ export default function Pricing() {
               key={plan.name}
               className={`relative p-8 ${
                 plan.popular
-                  ? 'border-2 border-purple-500 shadow-xl scale-105'
+                  ? 'border-2 border-blue-500 shadow-xl scale-105'
                   : 'hover:shadow-lg transition-shadow'
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-gradient-to-r from-blue-600 to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
                     가장 인기
                   </span>
                 </div>
@@ -147,7 +147,7 @@ export default function Pricing() {
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <span className="text-gray-600">{feature}</span>
                     </li>
                   ))}

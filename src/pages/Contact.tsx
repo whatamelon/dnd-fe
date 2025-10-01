@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, MessageCircle, Clock, Headphones } from 'lucide-re
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-blue-100">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -22,7 +22,7 @@ export default function Contact() {
             <Card className="p-8">
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-3">
-                  <MessageCircle className="w-6 h-6 text-purple-500" />
+                  <MessageCircle className="w-6 h-6 text-blue-500" />
                   문의하기
                 </CardTitle>
                 <CardDescription className="text-lg">
@@ -74,7 +74,7 @@ export default function Contact() {
                 <Button
                   size="lg"
                   variant="default"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                  className="w-full bg-gradient-to-r from-blue-600 to-yellow-500 hover:from-blue-700 hover:to-yellow-600"
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   메시지 보내기
@@ -87,7 +87,7 @@ export default function Contact() {
               <Card className="p-6">
                 <CardHeader>
                   <CardTitle className="text-xl flex items-center gap-3">
-                    <Headphones className="w-5 h-5 text-blue-500" />
+                    <Headphones className="w-5 h-5 text-blue-600" />
                     고객 지원
                   </CardTitle>
                 </CardHeader>
@@ -119,7 +119,7 @@ export default function Contact() {
               <Card className="p-6">
                 <CardHeader>
                   <CardTitle className="text-xl flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-green-500" />
+                    <MapPin className="w-5 h-5 text-yellow-600" />
                     회사 정보
                   </CardTitle>
                 </CardHeader>

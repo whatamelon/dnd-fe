@@ -3,7 +3,7 @@ import { Sparkles, Camera, Palette, MapPin, Zap, Shield, Globe } from 'lucide-re
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-blue-100">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -19,7 +19,7 @@ export default function About() {
             <Card className="p-8">
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-3">
-                  <Sparkles className="w-8 h-8 text-purple-500" />
+                  <Sparkles className="w-8 h-8 text-blue-500" />
                   서비스 개요
                 </CardTitle>
                 <CardDescription className="text-lg">
@@ -41,7 +41,7 @@ export default function About() {
             <Card className="p-8">
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-3">
-                  <Camera className="w-8 h-8 text-blue-500" />
+                  <Camera className="w-8 h-8 text-yellow-500" />
                   핵심 기능
                 </CardTitle>
                 <CardDescription className="text-lg">
@@ -51,23 +51,23 @@ export default function About() {
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                     <span>다중/단일 옷 착용샷 생성</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                     <span>분위기, 채도, 장소 커스터마이징</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                     <span>고품질 AI 생성 이미지</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
                     <span>빠른 처리 속도</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                     <span>히스토리 관리 및 저장</span>
                   </li>
                 </ul>
@@ -79,7 +79,7 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="text-center p-6">
               <CardHeader>
-                <Palette className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+                <Palette className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                 <CardTitle>다양한 설정 옵션</CardTitle>
                 <CardDescription>분위기, 채도, 장소 등 세밀한 커스터마이징</CardDescription>
               </CardHeader>
@@ -107,7 +107,7 @@ export default function About() {
 
             <Card className="text-center p-6">
               <CardHeader>
-                <Shield className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <Shield className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <CardTitle>안전한 서비스</CardTitle>
                 <CardDescription>개인정보 보호 및 데이터 보안</CardDescription>
               </CardHeader>
@@ -124,7 +124,7 @@ export default function About() {
           <Card className="mb-16">
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-3">
-                <Globe className="w-8 h-8 text-indigo-500" />
+                <Globe className="w-8 h-8 text-blue-500" />
                 활용 분야
               </CardTitle>
               <CardDescription className="text-lg">
@@ -177,19 +177,19 @@ export default function About() {
                   <h3 className="font-semibold mb-4">프론트엔드</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
                       React 19 + TypeScript
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                       Tailwind CSS v4
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
                       Shadcn/ui
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-yellow-600 rounded-full"></span>
                       React Router
                     </li>
                   </ul>
@@ -198,19 +198,19 @@ export default function About() {
                   <h3 className="font-semibold mb-4">개발 도구</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
                       Vite (빌드 도구)
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
                       pnpm (패키지 매니저)
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                       ESLint + Prettier
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-yellow-600 rounded-full"></span>
                       React i18next
                     </li>
                   </ul>
