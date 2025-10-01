@@ -1,23 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import {
-  Upload,
-  Sparkles,
-  Camera,
-  History,
-  CreditCard,
-  User,
-  ArrowRight,
-  Play,
-  Zap,
-  Star,
-  CheckCircle,
-  Globe,
-  Shield,
-} from 'lucide-react'
+import { Sparkles, Camera, Zap } from 'lucide-react'
 import FadeInUp from '@/components/animations/FadeInUp'
 import ParallaxSection from '@/components/animations/ParallaxSection'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -67,15 +53,13 @@ export default function Home() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-6 shadow-lg">
               <Sparkles className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-gray-700">
-                AI 기술로 혁신적인 패션 경험
-              </span>
+              <span className="text-sm font-medium text-gray-700">새로운 커머스와의 조우</span>
             </div>
 
             <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent mb-6 leading-tight">
-              AI로 만드는
+              완벽한 모델 착용샷
               <br />
-              완벽한 옷 착용샷
+              경험 그 이상의 경험
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -84,136 +68,54 @@ export default function Home() {
               <span className="font-semibold text-blue-600">AI가 당신만의 모델 착용샷을 생성</span>
               해드립니다
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-yellow-500 hover:from-blue-700 hover:to-yellow-600 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              >
-                <Sparkles className="w-5 h-5 mr-2" />
-                지금 시작하기
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="px-8 py-4 text-lg font-semibold border-2 hover:bg-white/80 backdrop-blur-sm"
-              >
-                <Play className="w-5 h-5 mr-2" />
-                샘플 보기
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-              <FadeInUp delay={0.4}>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">10K+</div>
-                  <div className="text-sm text-gray-600">생성된 착용샷</div>
-                </div>
-              </FadeInUp>
-              <FadeInUp delay={0.5}>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-600">5K+</div>
-                  <div className="text-sm text-gray-600">만족한 사용자</div>
-                </div>
-              </FadeInUp>
-              <FadeInUp delay={0.6}>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">99%</div>
-                  <div className="text-sm text-gray-600">만족도</div>
-                </div>
-              </FadeInUp>
-            </div>
           </div>
         </FadeInUp>
 
-        {/* Main Features */}
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Feature 1: Multiple Clothes */}
-          <FadeInUp delay={0.3}>
-            <Card className="p-8 hover:shadow-2xl transition-all duration-500 group border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Upload className="w-10 h-10 text-white" />
-                </div>
-                <CardTitle className="text-3xl font-bold">다중 옷 착용샷 생성</CardTitle>
-                <CardDescription className="text-lg text-gray-600">
-                  여러 개의 옷을 조합하여 다양한 스타일의 착용샷을 만들어보세요
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4 text-gray-600 mb-8">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <span>여러 개의 옷 사진 업로드</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <span>분위기, 채도, 장소 설정</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <span>다양한 스타일 조합 결과</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <span>고품질 AI 생성 이미지</span>
-                  </li>
-                </ul>
-                <Button
-                  className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-300"
-                  size="lg"
-                >
-                  다중 옷 생성하기
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-          </FadeInUp>
+        {/* Feature Section 1: 모델 착용샷 & 사용샷 */}
+        <FadeInUp delay={0.3}>
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-6 shadow-lg">
+              <Camera className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-medium text-gray-700">완벽한 비주얼 콘텐츠</span>
+            </div>
 
-          {/* Feature 2: Single Clothes */}
-          <FadeInUp delay={0.4}>
-            <Card className="p-8 hover:shadow-2xl transition-all duration-500 group border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Camera className="w-10 h-10 text-white" />
-                </div>
-                <CardTitle className="text-3xl font-bold">단일 옷 착용샷 생성</CardTitle>
-                <CardDescription className="text-lg text-gray-600">
-                  하나의 옷으로 빠르고 간편하게 착용샷을 생성해보세요
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4 text-gray-600 mb-8">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-600" />
-                    <span>하나의 옷 사진 업로드</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-600" />
-                    <span>분위기, 채도, 장소 설정</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-600" />
-                    <span>빠른 처리 속도</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-yellow-600" />
-                    <span>간편한 사용법</span>
-                  </li>
-                </ul>
-                <Button
-                  className="w-full group-hover:bg-gradient-to-r group-hover:from-yellow-500 group-hover:to-yellow-600 transition-all duration-300"
-                  size="lg"
-                >
-                  단일 옷 생성하기
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-          </FadeInUp>
-        </div>
+            <h2 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent mb-6 leading-tight">
+              모델 착용샷
+              <br />
+              사용샷까지
+            </h2>
+
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+              전문 모델이 착용한 듯한 착용샷과
+              <br />
+              <span className="font-semibold text-blue-600">
+                실제 사용 장면을 담은 사용샷을 한 번에
+              </span>
+            </p>
+          </div>
+        </FadeInUp>
+
+        {/* Feature Section 2: 썸네일 → 상세페이지 */}
+        <FadeInUp delay={0.4}>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-6 shadow-lg">
+              <Zap className="w-4 h-4 text-yellow-600" />
+              <span className="text-sm font-medium text-gray-700">빠른 일괄 처리</span>
+            </div>
+
+            <h2 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent mb-6 leading-tight">
+              썸네일부터
+              <br />
+              상세페이지까지
+            </h2>
+
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+              한 번의 클릭으로 필요한 모든 이미지를
+              <br />
+              <span className="font-semibold text-blue-600">빠르게 생성하고 즉시 사용</span>
+            </p>
+          </div>
+        </FadeInUp>
 
         {/* Process Section */}
         <div className="pb-[800px]">
@@ -262,7 +164,7 @@ export default function Home() {
         </div>
 
         {/* Additional Features */}
-        <div className="py-4">
+        {/* <div className="py-4">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <FadeInUp delay={0.9}>
               <Card className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
@@ -306,10 +208,10 @@ export default function Home() {
               </Card>
             </FadeInUp>
           </div>
-        </div>
+        </div> */}
 
         {/* Features Grid */}
-        <div className="py-20">
+        {/* <div className="py-20">
           <FadeInUp delay={1.2}>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               <Card className="hover:shadow-xl text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-all duration-300 group">
@@ -334,7 +236,7 @@ export default function Home() {
               </Card>
             </div>
           </FadeInUp>
-        </div>
+        </div> */}
 
         {/* CTA Section */}
         <div className="py-20">
@@ -345,20 +247,24 @@ export default function Home() {
                 무료로 체험하고 AI의 놀라운 결과를 확인하세요
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-                >
-                  무료로 시작하기
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
-                >
-                  요금제 보기
-                </Button>
+                <Link to="/login">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-yellow-500 hover:from-blue-700 hover:to-yellow-600 text-white px-8 py-4 text-md font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  >
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    지금 시작하기
+                  </Button>
+                </Link>
+                <Link to="/samples">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white text-black hover:bg-white/10 px-8 py-4 text-md font-semibold"
+                  >
+                    미리 보기
+                  </Button>
+                </Link>
               </div>
             </div>
           </FadeInUp>

@@ -2,6 +2,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useAuth } from '@/hooks/useAuth'
+import logo from '@/assets/logo/logo_light.png'
+import { Sparkles } from 'lucide-react'
 
 export default function Navigation() {
   const location = useLocation()
@@ -19,8 +21,8 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
-            <Link to="/" className="text-xl font-bold text-gray-900">
-              AI 착용샷
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="AI 착용샷" className="h-4" />
             </Link>
             <div className="hidden md:flex space-x-4">
               {navItems.map(item => (
@@ -60,11 +62,14 @@ export default function Navigation() {
             ) : (
               <>
                 <Link to="/login">
-                  <Button variant="outline" size="sm">
-                    로그인
+                  <Button
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-600 to-yellow-500 hover:from-blue-700 hover:to-yellow-600 text-white px-8 py-4 text-sm font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  >
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    지금 시작하기
                   </Button>
                 </Link>
-                <Button size="sm">시작하기</Button>
               </>
             )}
           </div>
