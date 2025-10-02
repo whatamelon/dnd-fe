@@ -8,9 +8,20 @@ import Contact from '@/pages/Contact'
 import ZonePage from '@/pages/Zone'
 import Login from '@/pages/Login'
 import { useAuth } from '@/hooks/useAuth'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { supabase } from '@/lib/supabase'
+import type { Session } from '@supabase/supabase-js'
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth()
+  const [session, setSession] = useState<Session | null>(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setSession(data.session ?? null))
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setSession(s ?? null))
+    return () => sub.subscription.unsubscribe()
+  }, [])
 
   // 로딩 중일 때 스피너 표시
   if (isLoading) {
@@ -32,8 +43,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           {/* 인증 상태에 따른 조건부 라우팅 */}
           <Route path="/zone" element={<ZonePage />} />
-          <Route path="/mypage" element={isAuthenticated ? <MyPage /> : <Login />} />
-          <Route path="/login" element={isAuthenticated ? <MyPage /> : <Login />} />
+          <Route path="/mypage" element={isAuthenticated || session ? <MyPage /> : <Login />} />
+          <Route path="/login" element={isAuthenticated || session ? <MyPage /> : <Login />} />
         </Routes>
       </div>
     </Router>

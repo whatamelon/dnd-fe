@@ -1,3 +1,4 @@
+import { supabase } from '@/lib/supabase'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 
 interface User {
@@ -55,16 +56,22 @@ const authAPI = {
   },
 
   // 구글 로그인
-  loginWithGoogle: async (): Promise<GoogleLoginResponse> => {
+  loginWithGoogle: async (): Promise<void> => {
     // 실제로는 Google OAuth 플로우
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    const token = 'mock_google_token_' + Date.now()
-    localStorage.setItem('auth_token', token)
-    return {
-      user: mockUser,
-      token,
-    }
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        // 로그인 후 돌아올 주소(브라우저가 열려있는 프론트 페이지)
+        redirectTo: window.location.origin,
+        // 리프레시 토큰 필요하면 아래 두 줄 권장
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        },
+        // 필요한 구글 스코프 추가 가능
+        // scopes: 'email profile openid'
+      },
+    })
   },
 
   // 로그아웃
@@ -104,8 +111,8 @@ export const useAuth = () => {
   // 구글 로그인 뮤테이션
   const googleLoginMutation = useMutation({
     mutationFn: authAPI.loginWithGoogle,
-    onSuccess: data => {
-      queryClient.setQueryData(['auth', 'user'], data.user)
+    onSuccess: () => {
+      queryClient.setQueryData(['auth', 'user'], mockUser)
     },
     onError: error => {
       console.error('구글 로그인 실패:', error)
