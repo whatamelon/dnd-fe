@@ -5,6 +5,7 @@ import About from '@/pages/About'
 import Pricing from '@/pages/Pricing'
 import MyPage from '@/pages/MyPage'
 import Contact from '@/pages/Contact'
+import ZonePage from '@/pages/Zone'
 import Login from '@/pages/Login'
 import { useAuth } from '@/hooks/useAuth'
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           {/* 인증 상태에 따른 조건부 라우팅 */}
+          <Route path="/zone" element={<ZonePage />} />
           <Route path="/mypage" element={isAuthenticated ? <MyPage /> : <Login />} />
           <Route path="/login" element={isAuthenticated ? <MyPage /> : <Login />} />
         </Routes>
