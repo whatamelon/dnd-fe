@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import FadeInUp from '@/components/animations/FadeInUp'
 import { useAuth } from '@/hooks/useAuth'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -42,6 +42,12 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-yellow-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 p-4">
+      {/* 홈으로 돌아가는 링크 */}
+      <div className="absolute top-4 left-4">
+        <Link to="/" className="text-blue-600 hover:text-blue-800 font-medium">
+          ← 홈으로 돌아가기
+        </Link>
+      </div>
       <FadeInUp>
         <Card className="w-xl">
           <CardHeader className="text-center">

@@ -1,3 +1,4 @@
+import Navigation from '@/components/Navigation'
 import ContactHeader from '@/components/feat/contact/ContactHeader'
 import ContactForm from '@/components/feat/contact/ContactForm'
 import SupportInfo from '@/components/feat/contact/SupportInfo'
@@ -7,6 +8,7 @@ import FAQSection from '@/components/feat/contact/FAQSection'
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-blue-100">
+      <Navigation variant="minimal" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <ContactHeader />

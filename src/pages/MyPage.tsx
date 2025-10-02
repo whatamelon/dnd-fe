@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input'
 import { useAuth } from '@/hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
+import Navigation from '@/components/Navigation'
 import {
   User,
   Settings,
@@ -25,14 +26,8 @@ export default function MyPage() {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    logout(
-      {},
-      {
-        onSuccess: () => {
-          navigate('/login')
-        },
-      }
-    )
+    logout()
+    navigate('/login')
   }
 
   // 샘플 히스토리 데이터
@@ -106,6 +101,7 @@ export default function MyPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <Navigation variant="minimal" />
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -235,7 +231,7 @@ export default function MyPage() {
                   <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="relative">
                       <div className="grid grid-cols-2 gap-1 h-48">
-                        {item.images.map((image, index) => (
+                        {item.images.map((_, index) => (
                           <div key={index} className="bg-gray-200 flex items-center justify-center">
                             <ImageIcon className="w-8 h-8 text-gray-400" />
                           </div>

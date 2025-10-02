@@ -1,4 +1,5 @@
 import { Camera, Zap } from 'lucide-react'
+import Navigation from '@/components/Navigation'
 import BackgroundAnimation from '@/components/feat/home/BackgroundAnimation'
 import HeroSection from '@/components/feat/home/HeroSection'
 import FeatureSection from '@/components/feat/home/FeatureSection'
@@ -8,6 +9,7 @@ import CTASection from '@/components/feat/home/CTASection'
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-blue-100 relative overflow-hidden">
+      <Navigation variant="transparent" />
       <BackgroundAnimation />
 
       <div className="container mx-auto px-4 py-20 relative z-10">

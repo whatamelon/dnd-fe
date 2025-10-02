@@ -1,9 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Sparkles, Camera, Palette, MapPin, Zap, Shield, Globe } from 'lucide-react'
+import Navigation from '@/components/Navigation'
 
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-blue-100">
+      <Navigation variant="minimal" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
